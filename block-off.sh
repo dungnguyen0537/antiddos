@@ -1,16 +1,16 @@
-curl -X PUT "https://api.cloudflare.com/client/v4/zones/dc4829573a8be18a7f2de65921259f9e/firewall/rules/fc6762a6fe104550bb096b2e727e6052" \
-     -H "X-Auth-Email: aulax432@gmail.com" \
-     -H "X-Auth-Key: c773770966510b528aff596071164bbd4b7b3" \
+curl -X PUT "https://api.cloudflare.com/client/v4/zones/4303f61c7dd2170fc9f8525fa23013d9/firewall/rules/4f74dd49986f4286ba13d2ae4e06f2bf" \
+     -H "X-Auth-Email: dungnguyen120737@gmail.com" \
+     -H "X-Auth-Key: 89bba666acac57579b5a48189eeb4013d2b9d" \
      -H "Content-Type: application/json" \
      --data '{
      "action": "block",
-     "priority": 500,
+     "priority": 1000,
      "paused": true,
-     "description": "Block is in Asia",
+     "description": "Block Quốc Tế",
      "filter": {
-    "id": "b15cd6141671454b924c56eec3b9d713",
-    "expression": "(http.user_agent contains \"Mozilla/5.0 (iPhone; CPU iPhone OS\" and not ip.geoip.country in {\"CN\" \"DE\" \"HK\" \"ID\" \"JP\" \"KP\" \"KR\" \"SG\" \"TW\" \"US\" \"VN\"} and ip.geoip.continent eq \"AS\" and cf.threat_score le 5 and not http.request.version in {\"HTTP/2\" \"HTTP/3\"} and http.request.method in {\"GET\" \"POST\"}) or (http.user_agent contains \"Mozilla/5.0 (Linux; Android\" and not ip.geoip.country in {\"CN\" \"DE\" \"HK\" \"ID\" \"JP\" \"KP\" \"KR\" \"TW\" \"US\" \"VN\" \"SG\"} and ip.geoip.continent eq \"AS\" and cf.threat_score le 5 and http.request.version in {\"HTTP/2\" \"HTTP/3\"} and http.request.method in {\"POST\" \"GET\"}) or (http.user_agent contains \"Mozilla/5.0 (Windows NT\" and not ip.geoip.country in {\"CN\" \"DE\" \"HK\" \"ID\" \"JP\" \"KP\" \"KR\" \"SG\" \"TW\" \"US\" \"VN\"} and ip.geoip.continent eq \"AS\" and cf.threat_score le 5 and http.request.version in {\"HTTP/2\" \"HTTP/3\"} and http.request.method in {\"GET\" \"POST\"}) or (http.user_agent contains \"Mozilla/5.0 (Macintosh; Intel Mac OS\" and not ip.geoip.country in {\"CN\" \"DE\" \"HK\" \"ID\" \"JP\" \"KP\" \"KR\" \"SG\" \"TW\" \"US\" \"VN\"} and ip.geoip.continent eq \"AS\" and cf.threat_score le 5 and http.request.version in {\"HTTP/2\" \"HTTP/3\"} and http.request.method in {\"GET\" \"POST\"})",
+    "id": "5f5e591f064a47bebad4a8078afbb51e",
+    "expression": "(ip.geoip.country ne \"VN\" and http.user_agent contains \"Mozilla/5.0 (Linux; Android\" and http.request.version in {\"HTTP/2\" \"HTTP/3\"} and http.request.method in {\"GET\" \"POST\"} and cf.threat_score le 5 and ip.geoip.continent eq \"AS\") or (ip.geoip.country ne \"VN\" and http.user_agent contains \"Mozilla/5.0 (iPhone; CPU iPhone OS \" and http.request.version in {\"HTTP/2\" \"HTTP/3\"} and http.request.method in {\"GET\" \"POST\"} and cf.threat_score le 5 and ip.geoip.continent eq \"AS\") or (ip.geoip.country ne \"VN\" and http.user_agent contains \"Mozilla/5.0 (Windows NT\" and http.request.version in {\"HTTP/2\" \"HTTP/3\"} and http.request.method in {\"GET\" \"POST\"} and cf.threat_score le 5 and ip.geoip.continent eq \"AS\") or (ip.geoip.country ne \"VN\" and http.user_agent contains \"Mozilla/5.0 (Macintosh; Intel Mac OS\" and http.request.version in {\"HTTP/2\" \"HTTP/3\"} and http.request.method in {\"GET\" \"POST\"} and cf.threat_score le 5 and ip.geoip.continent eq \"AS\")",
     "paused": false,
-    "description": "Block is in Asia"
+    "description": "Block Quốc Tế"
   }
   }'
