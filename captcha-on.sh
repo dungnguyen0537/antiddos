@@ -13,4 +13,4 @@ curl -X PUT "https://api.cloudflare.com/client/v4/zones/f45118cd00ea0245a6f7e9b8
     "paused": false,
     "description": "Managed Challenge Việt Nam"
   }
-  }
+  }'
